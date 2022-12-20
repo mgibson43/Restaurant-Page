@@ -22,7 +22,7 @@ p {
   line-height: 1.6;
 }
 
-nav {
+header {
   color: #fff;
   background-color: #99582a;
 }
@@ -35,7 +35,7 @@ nav {
   color: #222;
 }
 
-.nav-container {
+.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,15 +44,19 @@ nav {
   padding: 0 2rem 0 4rem;
 }
 
-.nav-links {
+.header-title {
+  cursor: pointer;
+}
+
+.header-links {
   display: flex;
 }
 
-.nav-link {
+.header-link {
   padding: 2rem 2rem;
 }
 
-.nav-link:hover {
+.header-link:hover {
   background-color: #432818;
   cursor: pointer;
 }
@@ -61,7 +65,30 @@ nav {
   text-decoration: underline;
 }
 
+.hero-section {
+  background: url('./hero-img.jpg');
+  background-size: cover;
+  width: 100vw;
+  height: 50rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.title-box {
+  color: #fff;
+}
+
 .title {
-  font-size: 42px;
+  text-align: center;
+  color: #fff;
+  font-size: 92px;
+}
+
+.title-text {
+  font-size: 24px;
+  text-align: center;
 }
 
