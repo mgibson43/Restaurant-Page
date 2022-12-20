@@ -1,7 +1,9 @@
 import './style.css';
+import reviewData from './reviews.csv';
 
 
 // Loads header header
+const [reviewsData, reviewAuthors] = [...reviewData];
 const content = document.getElementById('content');
 const container = document.createElement('div');
 const header = document.createElement('header');
@@ -53,14 +55,16 @@ function homepage() {
     link.classList.remove('selected');
   });
   home.classList.add('selected');
+  document.title = "Home | Kappu Keiki";
 
   // Creates hero section
-  const hero = document.createElement('div');
+  const hero = document.createElement('section');
   const titleBox = document.createElement('div');
   const title = document.createElement('h1');
   const titleText = document.createElement('p');
 
   hero.classList.add('hero-section');
+  hero.classList.add('section-margin');
   title.classList.add('title');
   titleBox.classList.add('title-box');
   titleText.classList.add('title-text');
@@ -74,6 +78,53 @@ function homepage() {
   hero.appendChild(titleBox);
 
   content.appendChild(hero);
+
+  // Creates review section
+  const reviewSection = document.createElement('section');
+  const reviewHeaderBox = document.createElement('div');
+  const reviewHeaderLeft = document.createElement('div');
+  const reviewHeader = document.createElement('h2');
+  const reviewHeaderRight = document.createElement('div');
+  const reviewBox = document.createElement('div');
+
+  for (let i = 0; i < reviewsData.length; i++) {
+    const review = document.createElement('p');
+    const reviewAuthor = document.createElement('p');
+    const reviewCard = document.createElement('div');
+
+    review.classList.add('review');
+    reviewAuthor.classList.add('review-author');
+    reviewCard.classList.add('review-card');
+
+    review.textContent = reviewsData[i];
+    reviewAuthor.textContent = `- ${reviewAuthors[i]}`;
+
+    reviewCard.appendChild(review);
+    reviewCard.appendChild(reviewAuthor);
+    reviewBox.appendChild(reviewCard);
+  }
+  
+
+  reviewSection.classList.add('review-section');
+  reviewSection.classList.add('section-margin');
+  reviewHeaderBox.classList.add('review-header-box');
+  reviewHeaderLeft.classList.add('line');
+  reviewHeader.classList.add('review-header');
+  reviewHeaderRight.classList.add('line');
+  reviewBox.classList.add('review-box');
+
+  reviewHeader.textContent = 'Reviews'
+
+  reviewHeaderBox.appendChild(reviewHeaderLeft);
+  reviewHeaderBox.appendChild(reviewHeader);
+  reviewHeaderBox.appendChild(reviewHeaderRight);
+
+  reviewSection.appendChild(reviewHeaderBox);
+  reviewSection.appendChild(reviewBox);
+
+  content.appendChild(reviewSection);
+
+  // Creates hours section
 }
 
 
@@ -84,8 +135,8 @@ function menuPage() {
   links.forEach(link => {
     link.classList.remove('selected');
   });
-
   menu.classList.add('selected');
+  document.title = "Menu | Kappu Keiki";
 }
 
 
@@ -96,8 +147,8 @@ function contactPage() {
   links.forEach(link => {
     link.classList.remove('selected');
   });
-
   contact.classList.add('selected');
+  document.title = "Contact | Kappu Keiki";
 }
 
 homepage();

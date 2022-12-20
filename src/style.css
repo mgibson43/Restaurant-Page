@@ -7,6 +7,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'MyFont';
+  src: url('./fonts/noto-sans-jp-v42-latin_japanese-500.woff') format('woff'),
+    url('./fonts/noto-sans-jp-v42-latin_japanese-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+
+/* General Styling */
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -35,6 +46,9 @@ header {
   color: #222;
 }
 
+
+/* Header Section */
+
 .header-container {
   display: flex;
   justify-content: space-between;
@@ -45,6 +59,7 @@ header {
 }
 
 .header-title {
+  font-size: 32px;
   cursor: pointer;
 }
 
@@ -53,6 +68,7 @@ header {
 }
 
 .header-link {
+  font-size: 18px;
   padding: 2rem 2rem;
 }
 
@@ -65,6 +81,13 @@ header {
   text-decoration: underline;
 }
 
+.section-margin {
+  margin-bottom: 12rem;
+}
+
+
+/* Hero Section */
+
 .hero-section {
   background: url('./hero-img.jpg');
   background-size: cover;
@@ -76,7 +99,7 @@ header {
   justify-content: center;
 
   padding: 2rem;
-  margin-bottom: 12rem;
+  
 }
 
 .title-box {
@@ -94,3 +117,54 @@ header {
   text-align: center;
 }
 
+
+/* Review Section */
+
+.review-section {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.review-header-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.review-header {
+  color: #432818;
+  font-size: 44px;
+}
+
+.line {
+  border: 2px solid #432818;
+  width: 100%;
+  height: 0;
+}
+
+.review-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  gap: 2rem;
+}
+
+.review-card {
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.review {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.review-author {
+  font-size: 18px;
+  text-align: right;
+}
