@@ -1,9 +1,11 @@
 import './style.css';
 import reviewData from './reviews.csv';
+import hoursData from './hours.csv';
 
 
 // Loads header header
 const [reviewsData, reviewAuthors] = [...reviewData];
+const [days, times] = [...hoursData];
 const content = document.getElementById('content');
 const container = document.createElement('div');
 const header = document.createElement('header');
@@ -125,6 +127,27 @@ function homepage() {
   content.appendChild(reviewSection);
 
   // Creates hours section
+  const hoursSection = document.createElement('section');
+  const hoursHeader = document.createElement('h2');
+  const hoursBox = document.createElement('div');
+
+  hoursSection.classList.add('hours-section');
+  hoursHeader.classList.add('hours-header');
+  hoursBox.classList.add('hours-box');
+
+  hoursHeader.textContent = 'Our Hours';
+
+  for (let i = 0; i < days.length; i++) {
+    const hours = document.createElement('p');
+    hours.classList.add('hours');
+    hours.textContent = `${days[i]}: ${times[i]}`;
+    hoursBox.appendChild(hours);
+  }
+
+  hoursSection.appendChild(hoursHeader);
+  hoursSection.appendChild(hoursBox);
+
+  content.appendChild(hoursSection);
 }
 
 
