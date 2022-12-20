@@ -69,21 +69,23 @@ header {
   background: url('./hero-img.jpg');
   background-size: cover;
   width: 100vw;
-  height: 50rem;
+  height: 40rem;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
   padding: 2rem;
+  margin-bottom: 12rem;
 }
 
 .title-box {
-  color: #fff;
+  color: #eee;
 }
 
 .title {
   text-align: center;
-  color: #fff;
+  color: #eee;
   font-size: 92px;
 }
 

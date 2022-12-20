@@ -1,6 +1,7 @@
 import './style.css';
-import heroImg from './hero-img.jpg';
 
+
+// Loads header header
 const content = document.getElementById('content');
 const container = document.createElement('div');
 const header = document.createElement('header');
@@ -14,6 +15,7 @@ container.classList.add('header-container');
 
 headerTitle.classList.add('header-title');
 headerTitle.textContent = 'Kappu Keiki';
+headerTitle.addEventListener('click', homepage);
 
 headerLinks.classList.add('header-links');
 
@@ -42,6 +44,8 @@ header.appendChild(container);
 content.before(header);
 const links = document.querySelectorAll('.header-link');
 
+
+// Loads homepage
 function homepage() {
   content.innerHTML = '';
 
@@ -50,6 +54,7 @@ function homepage() {
   });
   home.classList.add('selected');
 
+  // Creates hero section
   const hero = document.createElement('div');
   const titleBox = document.createElement('div');
   const title = document.createElement('h1');
@@ -71,6 +76,8 @@ function homepage() {
   content.appendChild(hero);
 }
 
+
+// Loads menu page
 function menuPage() {
   content.innerHTML = '';
 
@@ -81,6 +88,8 @@ function menuPage() {
   menu.classList.add('selected');
 }
 
+
+// Loads contact page
 function contactPage() {
   content.innerHTML = '';
 
