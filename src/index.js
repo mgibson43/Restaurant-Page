@@ -440,4 +440,4 @@ function contactPage() {
   content.appendChild(contactForm);
 }
 
-contactPage();
+homepage();
