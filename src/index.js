@@ -1,11 +1,14 @@
 import './style.css';
-import reviewData from './reviews.csv';
-import hoursData from './hours.csv';
+import reviewData from './csvs/reviews.csv';
+import hoursData from './csvs/hours.csv';
+import menuData from './csvs/menu-items.csv'
+import logo from './imgs/logo-img.png';
 
 
 // Loads header header
 const [reviewsData, reviewAuthors] = [...reviewData];
 const [days, times] = [...hoursData];
+const [coffees, coffeePrices, teas, teaPrices, breakfasts, breakfastPrices, desserts, dessertPrices] = [...menuData];
 const content = document.getElementById('content');
 const container = document.createElement('div');
 const header = document.createElement('header');
@@ -160,6 +163,178 @@ function menuPage() {
   });
   menu.classList.add('selected');
   document.title = "Menu | Kappu Keiki";
+
+  // Logo
+  const menuSection = document.createElement('section');
+  const mainLogo = new Image();
+  mainLogo.src = logo;
+
+  // Coffee Menu
+  const coffeeMenu = document.createElement('div');
+  const coffeeTitleBox = document.createElement('div');
+  const coffeeTopLine = document.createElement('div');
+  const coffeeTitle = document.createElement('h2');
+  const coffeeBotLine = document.createElement('div');
+  const coffeeMenuItems = document.createElement('div');
+  
+  for (let i = 0; i < coffees.length; i++) {
+    const menuItem = document.createElement('div');
+    const item = document.createElement('p');
+    const price = document.createElement('p');
+
+    menuItem.classList.add('menu-item');
+    item.classList.add('item');
+    price.classList.add('price');
+
+    item.textContent = `${coffees[i]}`;
+    price.textContent = `${coffeePrices[i]}`;
+
+    menuItem.appendChild(item);
+    menuItem.appendChild(price);
+    coffeeMenuItems.appendChild(menuItem);
+  }
+
+  menuSection.classList.add('menu-section');
+  mainLogo.classList.add('logo');
+  coffeeMenu.classList.add('menu-box');
+  coffeeTitleBox.classList.add('menu-title-box');
+  coffeeTitle.classList.add('menu-title');
+  coffeeTopLine.classList.add('menu-line');
+  coffeeBotLine.classList.add('menu-line');
+
+  coffeeTitle.textContent = 'Coffee';
+
+  coffeeTitleBox.appendChild(coffeeTopLine);
+  coffeeTitleBox.appendChild(coffeeTitle);
+  coffeeTitleBox.appendChild(coffeeBotLine);
+  coffeeMenu.appendChild(coffeeTitleBox);
+  coffeeMenu.appendChild(coffeeMenuItems);
+
+  // Tea Menu
+  const teaMenu = document.createElement('div');
+  const teaTitleBox = document.createElement('div');
+  const teaTopLine = document.createElement('div');
+  const teaTitle = document.createElement('h2');
+  const teaBotLine = document.createElement('div');
+  const teaMenuItems = document.createElement('div');
+  
+  for (let i = 0; i < teas.length; i++) {
+    const menuItem = document.createElement('div');
+    const item = document.createElement('p');
+    const price = document.createElement('p');
+
+    menuItem.classList.add('menu-item');
+    item.classList.add('item');
+    price.classList.add('price');
+
+    item.textContent = `${teas[i]}`;
+    price.textContent = `${teaPrices[i]}`;
+
+    menuItem.appendChild(item);
+    menuItem.appendChild(price);
+    teaMenuItems.appendChild(menuItem);
+  }
+
+  menuSection.classList.add('menu-section');
+  mainLogo.classList.add('logo');
+  teaMenu.classList.add('menu-box');
+  teaTitleBox.classList.add('menu-title-box');
+  teaTitle.classList.add('menu-title');
+  teaTopLine.classList.add('menu-line');
+  teaBotLine.classList.add('menu-line');
+  
+  teaTitle.textContent = 'Tea';
+
+  teaTitleBox.appendChild(teaTopLine);
+  teaTitleBox.appendChild(teaTitle);
+  teaTitleBox.appendChild(teaBotLine);
+  teaMenu.appendChild(teaTitleBox);
+  teaMenu.appendChild(teaMenuItems);
+
+  // Breakfast Menu
+  const breakfastMenu = document.createElement('div');
+  const breakfastTitleBox = document.createElement('div');
+  const breakfastTopLine = document.createElement('div');
+  const breakfastTitle = document.createElement('h2');
+  const breakfastBotLine = document.createElement('div');
+  const breakfastMenuItems = document.createElement('div');
+  
+  for (let i = 0; i < teas.length; i++) {
+    const menuItem = document.createElement('div');
+    const item = document.createElement('p');
+    const price = document.createElement('p');
+
+    menuItem.classList.add('menu-item');
+    item.classList.add('item');
+    price.classList.add('price');
+
+    item.textContent = `${breakfasts[i]}`;
+    price.textContent = `${breakfastPrices[i]}`;
+
+    menuItem.appendChild(item);
+    menuItem.appendChild(price);
+    breakfastMenuItems.appendChild(menuItem);
+  }
+
+  breakfastMenu.classList.add('menu-box');
+  breakfastTitleBox.classList.add('menu-title-box');
+  breakfastTitle.classList.add('menu-title');
+  breakfastTopLine.classList.add('menu-line');
+  breakfastBotLine.classList.add('menu-line');
+  
+  breakfastTitle.textContent = 'Breakfast';
+
+  breakfastTitleBox.appendChild(breakfastTopLine);
+  breakfastTitleBox.appendChild(breakfastTitle);
+  breakfastTitleBox.appendChild(breakfastBotLine);
+  breakfastMenu.appendChild(breakfastTitleBox);
+  breakfastMenu.appendChild(breakfastMenuItems);
+
+  // Bakery Menu
+  const dessertMenu = document.createElement('div');
+  const dessertTitleBox = document.createElement('div');
+  const dessertTopLine = document.createElement('div');
+  const dessertTitle = document.createElement('h2');
+  const dessertBotLine = document.createElement('div');
+  const dessertMenuItems = document.createElement('div');
+  
+  for (let i = 0; i < desserts.length; i++) {
+    const menuItem = document.createElement('div');
+    const item = document.createElement('p');
+    const price = document.createElement('p');
+
+    menuItem.classList.add('menu-item');
+    item.classList.add('item');
+    price.classList.add('price');
+
+    item.textContent = `${desserts[i]}`;
+    price.textContent = `${dessertPrices[i]}`;
+
+    menuItem.appendChild(item);
+    menuItem.appendChild(price);
+    dessertMenuItems.appendChild(menuItem);
+  }
+
+  dessertMenu.classList.add('menu-box');
+  dessertTitleBox.classList.add('menu-title-box');
+  dessertTitle.classList.add('menu-title');
+  dessertTopLine.classList.add('menu-line');
+  dessertBotLine.classList.add('menu-line');
+  
+  dessertTitle.textContent = 'Breakfast';
+
+  dessertTitleBox.appendChild(dessertTopLine);
+  dessertTitleBox.appendChild(dessertTitle);
+  dessertTitleBox.appendChild(dessertBotLine);
+  dessertMenu.appendChild(dessertTitleBox);
+  dessertMenu.appendChild(dessertMenuItems);
+
+  menuSection.appendChild(mainLogo);
+  menuSection.appendChild(coffeeMenu);
+  menuSection.appendChild(teaMenu);
+  menuSection.appendChild(breakfastMenu);
+  menuSection.appendChild(dessertMenu);
+  content.appendChild(menuSection);
 }
 
 
@@ -174,4 +349,4 @@ function contactPage() {
   document.title = "Contact | Kappu Keiki";
 }
 
-homepage();
+menuPage();
