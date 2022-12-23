@@ -169,6 +169,8 @@ function menuPage() {
   const mainLogo = new Image();
   mainLogo.src = logo;
 
+  mainLogo.addEventListener('click', homepage);
+
   // Coffee Menu
   const coffeeMenu = document.createElement('aside');
   const coffeeTitleBox = document.createElement('div');
