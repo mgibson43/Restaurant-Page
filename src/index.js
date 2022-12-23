@@ -170,7 +170,7 @@ function menuPage() {
   mainLogo.src = logo;
 
   // Coffee Menu
-  const coffeeMenu = document.createElement('div');
+  const coffeeMenu = document.createElement('aside');
   const coffeeTitleBox = document.createElement('div');
   const coffeeTopLine = document.createElement('div');
   const coffeeTitle = document.createElement('h2');
@@ -211,7 +211,7 @@ function menuPage() {
   coffeeMenu.appendChild(coffeeMenuItems);
 
   // Tea Menu
-  const teaMenu = document.createElement('div');
+  const teaMenu = document.createElement('aside');
   const teaTitleBox = document.createElement('div');
   const teaTopLine = document.createElement('div');
   const teaTitle = document.createElement('h2');
@@ -252,7 +252,7 @@ function menuPage() {
   teaMenu.appendChild(teaMenuItems);
 
   // Breakfast Menu
-  const breakfastMenu = document.createElement('div');
+  const breakfastMenu = document.createElement('aside');
   const breakfastTitleBox = document.createElement('div');
   const breakfastTopLine = document.createElement('div');
   const breakfastTitle = document.createElement('h2');
@@ -291,7 +291,7 @@ function menuPage() {
   breakfastMenu.appendChild(breakfastMenuItems);
 
   // Bakery Menu
-  const dessertMenu = document.createElement('div');
+  const dessertMenu = document.createElement('aside');
   const dessertTitleBox = document.createElement('div');
   const dessertTopLine = document.createElement('div');
   const dessertTitle = document.createElement('h2');
@@ -329,6 +329,7 @@ function menuPage() {
   dessertMenu.appendChild(dessertTitleBox);
   dessertMenu.appendChild(dessertMenuItems);
 
+  // Adding items to content section
   menuSection.appendChild(mainLogo);
   menuSection.appendChild(coffeeMenu);
   menuSection.appendChild(teaMenu);
@@ -347,6 +348,94 @@ function contactPage() {
   });
   contact.classList.add('selected');
   document.title = "Contact | Kappu Keiki";
+
+  // Contact Hero
+  const contactSection = document.createElement('section');
+  const contactInfoBox = document.createElement('div');
+  const contactTitle = document.createElement('div');
+  const contactBtnBox = document.createElement('div');
+  const addressBtn = document.createElement('button');
+  const phoneNumBtn = document.createElement('button');
+
+  contactSection.classList.add('contact-section');
+  contactInfoBox.classList.add('contact-info-box');
+  contactBtnBox.classList.add('contact-btn-box');
+  contactTitle.classList.add('contact-title');
+  addressBtn.classList.add('btn');
+  phoneNumBtn.classList.add('btn');
+
+  contactTitle.textContent = 'Contact';
+  addressBtn.textContent = '300 Address St, City State';
+  phoneNumBtn.textContent = '(111) 222-3333';
+
+  contactBtnBox.appendChild(addressBtn);
+  contactBtnBox.appendChild(phoneNumBtn);
+  contactInfoBox.appendChild(contactTitle);
+  contactInfoBox.appendChild(contactBtnBox);
+  contactSection.appendChild(contactInfoBox);
+
+  // Contact Form
+  const contactForm = document.createElement('form');
+  const formName = document.createElement('div');
+  const labelName = document.createElement('label');
+  const inputName = document.createElement('input');
+  const formEmail = document.createElement('div');
+  const labelEmail = document.createElement('label');
+  const inputEmail = document.createElement('input');
+  const formMessage = document.createElement('div');
+  const labelMessage = document.createElement('label');
+  const textAreaMessage = document.createElement('textarea');
+  const formBtn = document.createElement('button');
+
+  labelName.textContent = 'Name *';
+  labelEmail.textContent = 'Email *';
+  labelMessage.textContent = 'Message *';
+
+  contactForm.classList.add('form');
+
+  formName.classList.add('name-box');
+  formName.classList.add('form-box');
+  labelName.setAttribute('for','name');
+  inputName.setAttribute('id', 'name');
+  inputName.setAttribute('type', 'text');
+  inputName.setAttribute('required', '');
+  inputName.setAttribute('placeholder', 'Firstname Lastname');
+
+  formName.appendChild(labelName);
+  formName.appendChild(inputName);
+  contactForm.appendChild(formName);
+
+  formEmail.classList.add('email-box');
+  formEmail.classList.add('form-box');
+  labelEmail.setAttribute('for', 'email');
+  inputEmail.setAttribute('id', 'email');
+  inputEmail.setAttribute('type', 'email');
+  inputEmail.setAttribute('required', '');
+  inputEmail.setAttribute('placeholder', 'email@email.com');
+
+  formEmail.appendChild(labelEmail);
+  formEmail.appendChild(inputEmail);
+  contactForm.appendChild(formEmail);
+
+  formMessage.classList.add('message-box');
+  formMessage.classList.add('form-box');
+  labelMessage.setAttribute('for', 'message');
+  textAreaMessage.setAttribute('id', 'message');
+  textAreaMessage.setAttribute('type', 'text');
+  textAreaMessage.setAttribute('required', '');
+  textAreaMessage.setAttribute('placeholder', 'This is a message.');
+
+  formMessage.appendChild(labelMessage);
+  formMessage.appendChild(textAreaMessage);
+  contactForm.appendChild(formMessage);
+
+  formBtn.classList.add('form-btn');
+  formBtn.textContent = 'Send';
+  formBtn.setAttribute('type', 'submit');
+  contactForm.appendChild(formBtn);
+
+  content.appendChild(contactSection);
+  content.appendChild(contactForm);
 }
 
-menuPage();
+contactPage();
