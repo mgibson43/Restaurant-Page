@@ -323,7 +323,7 @@ function menuPage() {
   dessertTopLine.classList.add('menu-line');
   dessertBotLine.classList.add('menu-line');
   
-  dessertTitle.textContent = 'Breakfast';
+  dessertTitle.textContent = 'Bakery';
 
   dessertTitleBox.appendChild(dessertTopLine);
   dessertTitleBox.appendChild(dessertTitle);
